@@ -33,6 +33,13 @@ DQN is a reinforcement learning algorithm that uses a neural network to estimate
 
 ![Screenshot 2025-06-09 121145](https://github.com/user-attachments/assets/e857e0be-f412-416f-aa12-856f16ce7436)
 
+📚 Resources
+📘 RL Course by David Silver
+
+🎥 GodotAgents YouTube Channel
+
+🎨 Credits
+Game assets from Brackeys Platformer Bundle
 
 ## ⚙️ Sample DQN Params
 
@@ -41,3 +48,5 @@ epsilon := 0.8
 gamma := 0.99
 batch_size := 64
 target_update_frequency := 1000
+
+
