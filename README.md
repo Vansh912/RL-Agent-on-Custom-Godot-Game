@@ -27,7 +27,7 @@ DQN is a reinforcement learning algorithm that uses a neural network to estimate
 - Hidden Layers: 2 × 64 neurons  
 - Output: 3 actions (Q-values)
 
-[Screenshot 2025-06-09 155738](https://github.com/user-attachments/assets/51bf3004-4f91-4a61-a116-08bd31de2c6a)
+![Screenshot 2025-06-09 155738](https://github.com/user-attachments/assets/51bf3004-4f91-4a61-a116-08bd31de2c6a)
 
 ## 🧪 Environment Preview
 
