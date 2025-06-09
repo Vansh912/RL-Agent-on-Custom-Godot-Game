@@ -1,0 +1,103 @@
+[gd_scene load_steps=9 format=3 uid="uid://ce7hcaxfrp661"]
+
+[ext_resource type="Script" uid="uid://ttnwbf1hktik" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://bovc2dqynhiup" path="res://assets/sprites/knight.png" id="1_uwrxv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vyb7"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("1_uwrxv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qlg0r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vyb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2els")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tuyoq"]
+radius = 6.08276
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 5
+collision_layer = 2
+script = ExtResource("1_g2els")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -12)
+sprite_frames = SubResource("SpriteFrames_qlg0r")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_tuyoq")
+
+[node name="RayCast_Down" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+target_position = Vector2(0, 150)
+
+[node name="RayCast_Up" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+target_position = Vector2(0, -150)
+
+[node name="RayCast_Right" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+rotation = -1.5708
+target_position = Vector2(0, 150)
+
+[node name="RayCast_Left" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+rotation = 1.5708
+target_position = Vector2(0, 150)
+
+[node name="RayCast_DownLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+target_position = Vector2(-131, 132)
+
+[node name="RayCast_DownRight" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+target_position = Vector2(131, 132)
+
+[node name="RayCast_UpLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+target_position = Vector2(-131, -132)
+
+[node name="RayCast_UpRight" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+target_position = Vector2(131, -132)
+
+[node name="player_timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="agent_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="episode_timer" type="Timer" parent="."]
+
+[node name="action_timer" type="Timer" parent="."]
